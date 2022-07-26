@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/lotofacil").permitAll()
                 .antMatchers(HttpMethod.POST, "/lotofacil").permitAll()
                 .antMatchers("/megasena").permitAll()
-                .anyRequest().permitAll();
+                .anyRequest().authenticated().and().httpBasic();
     }
     /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
